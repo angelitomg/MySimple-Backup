@@ -157,7 +157,7 @@
 				* Insere os valores
 				*/
 				foreach ($registro as $chave => $valor){
-					$dump_str .= "'{$valor}'";
+					$dump_str .= "'" . mysqli_real_escape_string($conexao, $valor) . "'";
 					if ($chave <> $ultimo)
 						$dump_str .= ", ";
 					else
